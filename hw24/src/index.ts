@@ -13,6 +13,7 @@ app.get('/', (req: Request, res: Response) => {
 
 // POST маршрут
 app.post('/', (req: Request, res: Response) => {
+  console.log(req.body); // Логирование тела запроса
   const { name, message } = req.body;
   res.send(`Привет, ${name}! Ты отправил сообщение: "${message}"`);
 });
