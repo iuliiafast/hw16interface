@@ -1,31 +1,50 @@
-// Задание 1
-function greetUser(name) {
-    console.log("\u041F\u0440\u0438\u0432\u0435\u0442, ".concat(name, "!"));
+var adminUser = {
+    name: "Alex",
+    email: "alex@example.com",
+    permissions: ["read", "write", "delete"]
+};
+console.log(adminUser);
+var car = {
+    make: "Toyota",
+    model: "Camry",
+    engine: {
+        type: "V6",
+        horsepower: 301
+    },
+    year: 2020
+};
+function displayCarInfo(car) {
+    var yearInfo = car.year ? ", Year: ".concat(car.year) : '';
+    console.log("Make: ".concat(car.make, ", Model: ").concat(car.model, ", Engine Type: ").concat(car.engine.type, ", Horsepower: ").concat(car.engine.horsepower).concat(yearInfo));
 }
-function printPersonInfo(person) {
-    console.log("\u0418\u043C\u044F: ".concat(person.name, ", \u0412\u043E\u0437\u0440\u0430\u0441\u0442: ").concat(person.age, ", \u0413\u043E\u0440\u043E\u0434: ").concat(person.city));
+displayCarInfo(car);
+function calculateDiscount(product, discount) {
+    return product.price - (product.price * (discount / 100));
 }
-// Задание 3
-function squareNumber(num) {
-    return num * num;
+var product = { name: "Laptop", price: 1000 };
+var newPrice = calculateDiscount(product, 10);
+console.log("New Price: ".concat(newPrice));
+var employees = [
+    { name: "John", salary: 50000 },
+    { name: "Jane", salary: 60000 },
+    { name: "Doe", salary: 55000 }
+];
+function getSalaries(employees) {
+    return employees.map(function (employee) { return employee.salary; });
 }
-// Задание 4
-function isEven(num) {
-    return num % 2 === 0;
+var salaries = getSalaries(employees);
+console.log(salaries);
+var student = {
+    firstName: "Alice",
+    lastName: "Smith",
+    grade: 90
+};
+function displayStudentInfo(student) {
+    console.log("Student: ".concat(student.firstName, " ").concat(student.lastName, ", Grade: ").concat(student.grade));
 }
-function printStudentInfo(student) {
-    console.log("\u0421\u0442\u0443\u0434\u0435\u043D\u0442: ".concat(student.name, ", \u041E\u0446\u0435\u043D\u043A\u0430: ").concat(student.grade));
-}
-// Задание 6
-function logMessage(message) {
-    console.log(message);
-}
-// Примеры использования
-greetUser('Алексей');
-var person = { name: 'Мария', age: 25, city: 'Москва' };
-printPersonInfo(person);
-console.log(squareNumber(4));
-console.log(isEven(4));
-var student = { name: 'Сергей', grade: 5 };
-printStudentInfo(student);
-logMessage('Это сообщение для логирования.');
+displayStudentInfo(student);
+var concatStrings = function (str1, str2) {
+    return str1 + str2;
+};
+var combinedString = concatStrings("Hello, ", "world!");
+console.log(combinedString);
